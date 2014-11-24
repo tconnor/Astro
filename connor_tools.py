@@ -39,3 +39,13 @@ def great_circle(dec1,dec2,ra1,ra2,decradians=True,raradians=True,out='arcsec',h
         print 'Invalid Output format for Great Circle Distance; returning arcseconds'
         return sigma_angle * 3600.
     
+def rahmstodec(hour,minute,second):
+    '''Converts a Right Ascension coordinate from HH:MM:SS to HH.DDDDDD (float)
+    Inputs:
+    hour: RA Hour
+    minute: RA Minute
+    second: RA Second'''
+    out = float(hour) + float(minute)/60. + float(second)/3600.
+    return out
+
+
