@@ -48,4 +48,11 @@ def rahmstodec(hour,minute,second):
     out = float(hour) + float(minute)/60. + float(second)/3600.
     return out
 
-
+def decdmstodec(degree,minute,second):
+    '''Converts a Declination coordinate from DD:MM:SS to DD.DDDDDD (float)
+    Inputs:
+    hour: DEC Hour
+    minute: DEC Minute
+    second: DEC Second'''
+    out = float(hour) + float(minute)/60. + float(second)/3600.
+    return out
