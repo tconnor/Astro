@@ -72,5 +72,17 @@ def decdectodms(declination):
     deg = int(declination) #This converts +3.XX to 3 and -3.XX to -3
     rmndr = abs(declination - deg)*60.
     mint = int(rmndr)
-    sec = rmndr - mint
+    sec = (rmndr - mint)*60.
     return deg,mint,sec
+
+def radectohms(righta):
+    '''Converts a right ascension in decimal degrees to Hours, Minutes, Seconds'''
+    hrrta = righta / 15.
+    hour = int(hrrta)
+    rmndr = (hrrta - hour)*60.
+    minute = int(rmndr)
+    sec = (rmndr - mint)*60.
+    return hour,minute,sec
+
+
+    
