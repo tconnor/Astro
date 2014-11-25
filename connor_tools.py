@@ -67,3 +67,10 @@ def rahmstodec(hour,minute,second):
     out = (float(hour) + float(minute)/60. + float(second)/3600.)*15.
     return out
 
+def decdectodms(declination):
+    '''Converts a declination in decimal degrees to Degrees, Minutes, Seconds'''
+    deg = int(declination) #This converts +3.XX to 3 and -3.XX to -3
+    rmndr = abs(declination - deg)*60.
+    mint = int(rmndr)
+    sec = rmndr - mint
+    return deg,mint,sec
