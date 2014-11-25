@@ -81,8 +81,9 @@ def radectohms(righta):
     hour = int(hrrta)
     rmndr = (hrrta - hour)*60.
     minute = int(rmndr)
-    sec = (rmndr - mint)*60.
+    sec = (rmndr - minute)*60.
     return hour,minute,sec
 
 
     
+rahmstodec(radectohms(rahmstodec(radectohms(22.00143))))
