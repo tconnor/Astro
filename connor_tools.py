@@ -88,3 +88,7 @@ def radectohms(righta):
 def redshift(lamda,redshift):
     '''Redshifts a wavelength'''
     return lamda * (1. + redshift)
+
+def restframe(lamda,redshift):
+    '''Converts a redshifted wavelength to restframe'''
+    return lamda / (1. + redshift)
