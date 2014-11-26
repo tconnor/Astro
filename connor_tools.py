@@ -85,5 +85,6 @@ def radectohms(righta):
     return hour,minute,sec
 
 
-    
-rahmstodec(radectohms(rahmstodec(radectohms(22.00143))))
+def redshift(lamda,redshift):
+    '''Redshifts a wavelength'''
+    return lamda * (1. + redshift)
