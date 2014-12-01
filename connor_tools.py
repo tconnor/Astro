@@ -1,6 +1,7 @@
 import numpy as np
 from matplotlib import pyplot as pt
 
+c_light = 2.99792458E10
 def great_circle(dec1,dec2,ra1,ra2,decradians=True,raradians=True,out='arcsec',haversine=False):
     '''Computes great circle angle between two coordinates in RA and Dec
     Inputs:
@@ -92,3 +93,4 @@ def redshift(lamda,redshift):
 def restframe(lamda,redshift):
     '''Converts a redshifted wavelength to restframe'''
     return lamda / (1. + redshift)
+
