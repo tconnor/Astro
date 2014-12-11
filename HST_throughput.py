@@ -30,3 +30,23 @@ def make_dict_WFC(filter):
             break
     return outdict
 
+def get_through(filterdict,wavelength,red_steps=5,blue_steps=5,output='median'):
+    '''Return the throughput at a given wavelength, with a spread in Angstroms allowed
+    Inputs: red_steps,blue_steps -- how many Angstroms red/blue of wavelength to include (default:5)
+            output: how to return throughput: Choices are 'median' (default),'sum', and 'average'. '''
+    through_list = []
+    for ll in range(wavelength-blue_steps,wavelength+red_steps+1):
+        try:
+            through_list.append(filterdict[ll])
+        except KeyError:
+            through_list.append(0)
+    output = output.lower() #Handle User Error
+    if output == 'median':
+        return np.median(through_list)
+    elif output == 'sum':
+        return sum(through_list)
+    elif output == 'average':
+        return np.mean(through_list)
+    else:
+        return np.median(through_list)
+    
