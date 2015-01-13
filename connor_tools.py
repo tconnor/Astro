@@ -97,3 +97,17 @@ def restframe(lamda,redshift):
     '''Converts a redshifted wavelength to restframe'''
     return lamda / (1. + redshift)
 
+def make_circle(radius,np,partial=False):
+    '''Returns an boolean array mask for a circle with a radius. Assumes numpy called as np'''
+    if partial:
+        print 'Mode not supported'
+        return np.array([])
+    else:
+        intrad = int(np.ceil(radius))
+        cx,cy = intrad,intrad
+        dimen = 2*intrad + 1
+        x,y = np.ogrid[:dimen,:dimen]
+        r2 = (x-cx)*(x-cx) + (y-cy)*(y-cy)
+        rsq = radius*radius
+        circmask = r2 <= rsq
+        return circmask
